@@ -22,7 +22,7 @@ inputs = {
 
   profiles = {
     master1 = {
-      machine_type = "e2-small"
+      machine_type = "e2-standard-2"
       boot_disk_image = "projects/nap-devops-nonprod/global/images/ubuntu-20-develop"
       tags = ["rke-master"]
       disk_size = 100
@@ -30,7 +30,7 @@ inputs = {
     }
 
     worker1 = {
-      machine_type = "e2-small"
+      machine_type = "e2-standard-2"
       boot_disk_image = "projects/nap-devops-nonprod/global/images/ubuntu-20-develop"
       tags = ["rke-worker"]
       disk_size = 300
