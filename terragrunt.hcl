@@ -97,12 +97,21 @@ provider "google" {
   project     = "${local.project}"
   region      = "${local.region}"
 }
+  
+provider "rke" {
+  log_file = "rke-cluster.log"
+}
 
 terraform {
   backend "gcs" {}
   required_providers {
     google = "4.10.0"
-  }  
+
+    rke = {
+      version = "1.3.0"
+      source = "rancher/rke"
+    }
+  }
 }
 EOF
 }
