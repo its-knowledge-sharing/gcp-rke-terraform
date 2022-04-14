@@ -7,8 +7,25 @@ resource rke_cluster "rke-cluster" {
   cluster_yaml = file("configs/cluster.yaml")
   
   dynamic "nodes" {
-    for_each = [ for vm in var.worker_nodes: {
+    for_each = [ for vm in var.master_nodes: {
       name = "${var.vm_master_name_prefix}-${vm.sequence}"
+      address = vm.ip
+      role = lookup(var.profiles, vm.profile, {}).role
+    }]
+
+    content {
+      hostname_override = nodes.value.name
+      address = nodes.value.address
+      internal_address = nodes.value.address
+      user             = var.vm_user
+      role             = nodes.value.role
+      ssh_key          = file(var.rke_ssh_key_path)      
+    }
+  }
+
+  dynamic "nodes" {
+    for_each = [ for vm in var.worker_nodes: {
+      name = "${var.vm_worker_name_prefix}-${vm.sequence}"
       address = vm.ip
       role = lookup(var.profiles, vm.profile, {}).role
     }]
