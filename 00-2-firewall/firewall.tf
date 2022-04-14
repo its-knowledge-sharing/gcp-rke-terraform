@@ -20,7 +20,7 @@ resource "google_compute_firewall" "rke-manager-connect" {
 
   allow {
     protocol = "tcp"
-    ports    = ["22", "80", "443", "6443", "30000-40000"]
+    ports    = ["22", "80", "443", "6443", "2379", "30000-40000"]
   }
 
   source_tags = ["rke-manager"]
