@@ -8,11 +8,6 @@ variable "boot_disk_size" {
   nullable = false 
 }
 
-variable "vm_ext_disk_size" {
-  type     = number
-  nullable = false 
-}
-
 variable "vm_sequence" {
   type     = string
   nullable = false 
