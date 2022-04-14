@@ -1,3 +1,7 @@
+locals {
+  registered_masters = [for n in var.master_nodes : n if n.mode != "unregistered"]
+  registered_workers = [for n in var.worker_nodes : n if n.mode != "unregistered"]
+}
 
 resource rke_cluster "rke-cluster" {
   delay_on_creation = 30
@@ -8,7 +12,7 @@ resource rke_cluster "rke-cluster" {
   cluster_yaml = file("configs/cluster.yaml")
   
   dynamic "nodes" {
-    for_each = [ for vm in var.master_nodes: {
+    for_each = [ for vm in local.registered_masters: {
       name = "${var.vm_master_name_prefix}-${vm.sequence}"
       address = vm.ip
       role = lookup(var.profiles, vm.profile, {}).role
@@ -25,7 +29,7 @@ resource rke_cluster "rke-cluster" {
   }
 
   dynamic "nodes" {
-    for_each = [ for vm in var.worker_nodes: {
+    for_each = [ for vm in local.registered_workers: {
       name = "${var.vm_worker_name_prefix}-${vm.sequence}"
       address = vm.ip
       role = lookup(var.profiles, vm.profile, {}).role

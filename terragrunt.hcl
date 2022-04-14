@@ -65,9 +65,9 @@ inputs = {
       ip = "10.10.1.21"
       zone = "a"
       profile = "worker1"
-      mode = "registered" 
+      mode = "registered" #unregistered
     },
-    { 
+    {
       sequence = "02"
       ip = "10.10.1.22"
       zone = "b"

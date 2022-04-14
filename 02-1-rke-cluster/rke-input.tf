@@ -44,6 +44,7 @@ variable "master_nodes" {
     sequence = string
     ip = string
     profile = string
+    mode = string
   }))
 }
 
@@ -52,6 +53,7 @@ variable "worker_nodes" {
     sequence = string
     ip = string
     profile = string
+    mode = string
   }))
 }
 
