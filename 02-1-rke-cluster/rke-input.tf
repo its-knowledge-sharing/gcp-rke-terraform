@@ -43,7 +43,6 @@ variable "master_nodes" {
   type = list(object({
     sequence = string
     ip = string
-    zone = string
     profile = string
   }))
 }
@@ -52,7 +51,6 @@ variable "worker_nodes" {
   type = list(object({
     sequence = string
     ip = string
-    zone = string    
     profile = string
   }))
 }
@@ -60,17 +58,11 @@ variable "worker_nodes" {
 variable "profiles" {
   type = object({
     master1 = object({
-      machine_type = string
-      boot_disk_image = string
-      disk_size = number
-      tags = list(string)
+      role = list(string)
     })
 
     worker1 = object({
-      machine_type = string
-      boot_disk_image = string
-      disk_size = number
-      tags = list(string)
+      role = list(string)
     })
   })
 }
