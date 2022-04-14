@@ -5,7 +5,7 @@ module "rke-masters" {
 
   vm_name         = "${var.vm_master_name_prefix}"
   vm_sequence     = "${each.value.sequence}"
-  vm_tags         = lookup(var.profiles, each.value.profile, [])
+  vm_tags         = lookup(var.profiles, each.value.profile, {}).tags
   vm_service_account = var.gce_rke_service_account
   boot_disk_image  = "will-change"
   vm_machine_type  = "e2-small"
