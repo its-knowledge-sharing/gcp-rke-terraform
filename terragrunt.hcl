@@ -44,18 +44,21 @@ inputs = {
       ip = "10.10.1.11" 
       zone = "a" 
       profile = "master1" 
+      mode = "registered" #unregistered
     },
     { 
       sequence = "02"
       ip = "10.10.1.12"
       zone = "b"
-      profile = "master1" 
+      profile = "master1"
+      mode = "registered"
     },  
     {
       sequence = "03"
       ip = "10.10.1.13"
       zone = "c"
       profile = "master1"
+      mode = "registered"
     }
   ]
 
