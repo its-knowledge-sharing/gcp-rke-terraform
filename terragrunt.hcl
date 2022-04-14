@@ -10,6 +10,7 @@ inputs = {
   vpc_name  = "rke-demo-vpc"
   vpc_subnet = "rke-demo-subnet-001"
 
+  vm_user = "devops"
   vm_master_name_prefix = "rke-master"
   vm_worker_name_prefix = "rke-worker"
 

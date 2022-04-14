@@ -36,6 +36,11 @@ variable "vm_worker_name_prefix" {
   nullable = false 
 }
 
+variable "vm_user" {
+  type     = string
+  nullable = false 
+}
+
 variable "master_nodes" {
   type = list(object({
     sequence = string
