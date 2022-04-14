@@ -64,25 +64,29 @@ inputs = {
       sequence = "01"
       ip = "10.10.1.21"
       zone = "a"
-      profile = "worker1" 
+      profile = "worker1"
+      mode = "registered" 
     },
     { 
       sequence = "02"
       ip = "10.10.1.22"
       zone = "b"
-      profile = "worker1" 
+      profile = "worker1"
+      mode = "registered"
     },
     { 
       sequence = "03"
       ip = "10.10.1.23"
       zone = "c"
-      profile = "worker1" 
+      profile = "worker1"
+      mode = "registered"
     },
 #    { 
 #      sequence = "04"
 #      ip = "10.10.1.24"
 #      zone = "a"
-#      profile = "worker1" 
+#      profile = "worker1"
+#      mode = "registered"
 #    }    
   ]
 
