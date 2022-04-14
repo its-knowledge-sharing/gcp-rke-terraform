@@ -84,13 +84,13 @@ inputs = {
       profile = "worker1"
       mode = "unregistered"
     },
-#    { 
-#      sequence = "04"
-#      ip = "10.10.1.24"
-#      zone = "a"
-#      profile = "worker1"
-#      mode = "registered"
-#    }
+    { 
+      sequence = "04"
+      ip = "10.10.1.24"
+      zone = "a"
+      profile = "worker1"
+      mode = "registered"
+    }
   ]
 
   gce_rke_service_account = "gce-rke-demo@${local.project}.iam.gserviceaccount.com"
