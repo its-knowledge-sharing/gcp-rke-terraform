@@ -1,5 +1,6 @@
 
 resource rke_cluster "rke-cluster" {
+  delay_on_creation = 30
   cluster_name = var.rke_cluster_name
   kubernetes_version = var.rke_k8s_version
   ignore_docker_version = var.rke_ignore_docker_version
