@@ -3,7 +3,7 @@ resource "google_service_account" "gce_sa_rke_demo" {
   display_name = "Terraform - GCE service account for RKE"
 }
 
-resource "google_project_iam_member" "gce_sa_rke_demo_storage_admin" {
+resource "google_project_iam_member" "gce_sa_rke_demo_compute_admin" {
   project = var.project
   role    = "roles/compute.admin"
   member  = "serviceAccount:${google_service_account.gce_sa_rke_demo.email}"
