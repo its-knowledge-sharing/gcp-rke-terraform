@@ -107,7 +107,7 @@ provider "google" {
 }
   
 provider "rke" {
-  log_file = "rke-cluster.log"
+  log_file = "../rke-cluster.log"
 }
 
 terraform {
