@@ -40,6 +40,7 @@ variable "master_nodes" {
   type = list(object({
     sequence = string
     ip = string
+    zone = string
     profile = string
   }))
 }
@@ -48,6 +49,7 @@ variable "worker_nodes" {
   type = list(object({
     sequence = string
     ip = string
+    zone = string    
     profile = string
   }))
 }
