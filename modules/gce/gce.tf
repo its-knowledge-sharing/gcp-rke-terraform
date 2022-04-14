@@ -7,7 +7,7 @@ module "gce" {
   vm_service_account = var.vm_service_account
   boot_disk_image  = var.boot_disk_image
   boot_disk_size   = var.boot_disk_size
-  public_key_file  = "public-key/id_rsa.pub"
+  public_key_file  = var.public_key_file
   vm_machine_type  = var.vm_machine_type
   vm_machine_zone  = var.vm_zone
   vm_deletion_protection = false

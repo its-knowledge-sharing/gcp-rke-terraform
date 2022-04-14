@@ -13,6 +13,11 @@ variable "vm_sequence" {
   nullable = false 
 }
 
+variable "public_key_file" {
+  type     = string
+  nullable = false 
+}
+
 variable "vm_name" {
   type     = string
   nullable = false 
