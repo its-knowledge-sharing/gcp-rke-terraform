@@ -5,39 +5,7 @@ locals {
 }
 
 inputs = {
-  project = local.project
-  region = local.region
-  vpc_name  = "rke-demo-vpc"
-  vpc_subnet = "rke-demo-subnet-001"
-
-  vm_user = "devops"
-  vm_master_name_prefix = "rke-master"
-  vm_worker_name_prefix = "rke-worker"
-
-  rke_cluster_name = "rke-demo"
-  rke_k8s_version = "v1.21.7-rancher1-1"
-  rke_ignore_docker_version = true
-  rke_prefix_path = "/var/lib/toolbox/rke"
-  rke_ssh_key_path = "../id_rsa" # Retrieved from Secret Manager
-
-  profiles = {
-    master1 = {
-      machine_type = "e2-standard-2"
-      boot_disk_image = "projects/nap-devops-nonprod/global/images/ubuntu-20-develop"
-      tags = ["rke-master"]
-      disk_size = 100
-      role = ["controlplane", "etcd"]
-    }
-
-    worker1 = {
-      machine_type = "e2-standard-2"
-      boot_disk_image = "projects/nap-devops-nonprod/global/images/ubuntu-20-develop"
-      tags = ["rke-worker"]
-      disk_size = 300
-      role = ["worker"]
-    }
-  }
-
+  ##### Start define nodes here #####
   master_nodes = [
     { 
       sequence = "01" 
@@ -92,6 +60,41 @@ inputs = {
       mode = "registered"
     }
   ]
+  ##### End define nodes #####
+
+  profiles = {
+    master1 = {
+      machine_type = "e2-standard-2"
+      boot_disk_image = "projects/nap-devops-nonprod/global/images/ubuntu-20-develop"
+      tags = ["rke-master"]
+      disk_size = 100
+      role = ["controlplane", "etcd"]
+    }
+
+    worker1 = {
+      machine_type = "e2-standard-2"
+      boot_disk_image = "projects/nap-devops-nonprod/global/images/ubuntu-20-develop"
+      tags = ["rke-worker"]
+      disk_size = 300
+      role = ["worker"]
+    }
+  }
+
+
+  project = local.project
+  region = local.region
+  vpc_name  = "rke-demo-vpc"
+  vpc_subnet = "rke-demo-subnet-001"
+
+  vm_user = "devops"
+  vm_master_name_prefix = "rke-master"
+  vm_worker_name_prefix = "rke-worker"
+
+  rke_cluster_name = "rke-demo"
+  rke_k8s_version = "v1.21.7-rancher1-1"
+  rke_ignore_docker_version = true
+  rke_prefix_path = "/var/lib/toolbox/rke"
+  rke_ssh_key_path = "../id_rsa" # Retrieved from Secret Manager
 
   gce_rke_service_account = "gce-rke-demo@${local.project}.iam.gserviceaccount.com"
 }
