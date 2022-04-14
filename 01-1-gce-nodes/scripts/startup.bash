@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "Do nothing !!!"
+sudo usermod -aG docker devops
