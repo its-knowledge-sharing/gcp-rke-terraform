@@ -82,7 +82,7 @@ inputs = {
       ip = "10.10.1.23"
       zone = "c"
       profile = "worker1"
-      mode = "registered"
+      mode = "unregistered"
     },
 #    { 
 #      sequence = "04"
