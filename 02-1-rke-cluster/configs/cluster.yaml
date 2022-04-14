@@ -1,5 +1,5 @@
 addons_include: []
-#  - ./configs/sc-standard.yaml
+  - configs/sc-standard.yaml
 
 cloud_provider:
     name: gce
