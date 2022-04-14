@@ -18,7 +18,7 @@ resource rke_cluster "rke-cluster" {
       address = nodes.value.address
       internal_address = nodes.value.address
       user             = var.vm_user
-      role             = nodes.value.role
+      role             = ["etcd", "controlplane"] #nodes.value.role
       ssh_key          = file(var.rke_ssh_key_path)      
     }
   }
@@ -35,7 +35,7 @@ resource rke_cluster "rke-cluster" {
       address = nodes.value.address
       internal_address = nodes.value.address
       user             = var.vm_user
-      role             = nodes.value.role
+      role             = ["worker"] #nodes.value.role
       ssh_key          = file(var.rke_ssh_key_path)      
     }
   }
