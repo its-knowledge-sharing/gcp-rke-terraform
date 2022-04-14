@@ -14,12 +14,19 @@ inputs = {
   vm_master_name_prefix = "rke-master"
   vm_worker_name_prefix = "rke-worker"
 
+  rke_cluster_name = "rke-demo"
+  rke_k8s_version = "v1.20.13-rancher1-1"
+  rke_ignore_docker_version = true
+  rke_prefix_path = "/var/lib/toolbox/rke"
+  rke_ssh_key_path = "../id_rsa" # Retrieved from Secret Manager
+
   profiles = {
     master1 = {
       machine_type = "e2-small"
       boot_disk_image = "projects/nap-devops-nonprod/global/images/ubuntu-20-develop"
       tags = ["rke-master"]
       disk_size = 100
+      role = ["controlplane", "etcd"]
     }
 
     worker1 = {
@@ -27,6 +34,7 @@ inputs = {
       boot_disk_image = "projects/nap-devops-nonprod/global/images/ubuntu-20-develop"
       tags = ["rke-worker"]
       disk_size = 300
+      role = ["worker"]
     }
   }
 
