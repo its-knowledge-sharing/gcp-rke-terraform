@@ -15,9 +15,9 @@ resource rke_cluster "rke-cluster" {
     }]
 
     content {
-      hostname_override = nodes.name
-      address = nodes.address
-      internal_address = nodes.address
+      #hostname_override = nodes.name
+      #address = nodes.address
+      #internal_address = nodes.address
       user             = var.vm_user
       role             = nodes.role
       ssh_key          = file(var.rke_ssh_key_path)      
