@@ -15,7 +15,7 @@ inputs = {
   vm_worker_name_prefix = "rke-worker"
 
   rke_cluster_name = "rke-demo"
-  rke_k8s_version = "v1.20.13-rancher1-1"
+  rke_k8s_version = "v1.21.7-rancher1-1"
   rke_ignore_docker_version = true
   rke_prefix_path = "/var/lib/toolbox/rke"
   rke_ssh_key_path = "../id_rsa" # Retrieved from Secret Manager
