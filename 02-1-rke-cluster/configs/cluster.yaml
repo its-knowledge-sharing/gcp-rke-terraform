@@ -1,4 +1,4 @@
-addons_include: []
+addons_include:
   - configs/sc-standard.yaml
 
 cloud_provider:
