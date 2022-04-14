@@ -5,8 +5,7 @@ resource "google_compute_firewall" "rke-inter-connect" {
   priority = 1000
 
   allow {
-    protocol = "tcp"
-    ports    = ["443", "6443"] #More to add
+    protocol = "all"
   }
 
   source_tags = ["rke-worker", "rke-master"]
@@ -20,7 +19,7 @@ resource "google_compute_firewall" "rke-manager-connect" {
 
   allow {
     protocol = "tcp"
-    ports    = ["22", "80", "443", "6443", "2379", "30000-40000"]
+    ports    = ["22", "80", "443", "6443", "2379", "30000-60000"]
   }
 
   source_tags = ["rke-manager"]
