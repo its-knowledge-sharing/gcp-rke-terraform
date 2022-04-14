@@ -16,7 +16,7 @@ module "rke-masters" {
   vm_tags          = lookup(var.profiles, each.value.profile, {}).tags
   boot_disk_image  = lookup(var.profiles, each.value.profile, {}).boot_disk_image
   vm_machine_type  = lookup(var.profiles, each.value.profile, {}).machine_type
-  vm_ext_disk_size = lookup(var.profiles, each.value.profile, {}).disk_size
+  boot_disk_size   = lookup(var.profiles, each.value.profile, {}).disk_size
 }
 
 module "rke-workers" {
@@ -37,5 +37,5 @@ module "rke-workers" {
   vm_tags          = lookup(var.profiles, each.value.profile, {}).tags
   boot_disk_image  = lookup(var.profiles, each.value.profile, {}).boot_disk_image
   vm_machine_type  = lookup(var.profiles, each.value.profile, {}).machine_type
-  vm_ext_disk_size = lookup(var.profiles, each.value.profile, {}).disk_size
+  boot_disk_size   = lookup(var.profiles, each.value.profile, {}).disk_size
 }

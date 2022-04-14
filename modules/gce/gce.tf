@@ -6,6 +6,7 @@ module "gce" {
   vm_tags         = var.vm_tags
   vm_service_account = var.vm_service_account
   boot_disk_image  = var.boot_disk_image
+  boot_disk_size   = var.boot_disk_size
   public_key_file  = "public-key/id_rsa.pub"
   vm_machine_type  = var.vm_machine_type
   vm_machine_zone  = var.vm_zone

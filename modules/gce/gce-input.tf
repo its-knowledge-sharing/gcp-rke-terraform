@@ -3,6 +3,11 @@ variable "vm_zone" {
   nullable = false 
 }
 
+variable "boot_disk_size" {
+  type     = number
+  nullable = false 
+}
+
 variable "vm_ext_disk_size" {
   type     = number
   nullable = false 
