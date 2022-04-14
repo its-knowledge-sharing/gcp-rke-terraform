@@ -33,6 +33,7 @@ module "rke-workers" {
   vm_subnet        = var.vpc_subnet
   project = var.project
   startup_script_path = "scripts/startup.bash"
+  public_key_file  = "../id_rsa.pub"
   private_ip       = "${each.value.ip}"
 
   vm_tags          = lookup(var.profiles, each.value.profile, {}).tags
