@@ -64,8 +64,8 @@ inputs = {
       ip = "10.10.1.25"
       zone = "b"
       profile = "worker1"
-      mode = "unregistered"
-    }    
+      mode = "registered"
+    }
   ]
   ##### End define nodes #####
 
