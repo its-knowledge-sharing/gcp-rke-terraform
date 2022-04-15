@@ -13,7 +13,7 @@ if [ -f "${PRIVATE_KEY_PATH}" ]; then
     echo "File [${PRIVATE_KEY_PATH}] already exist, skip creating it!!!"
 else
     echo "Create file [${PRIVATE_KEY_PATH}]"
-    ssh-keygen -f ${PRIVATE_KEY_PATH}
+    ssh-keygen -f ${PRIVATE_KEY_PATH} -N ""
 fi
 
 OPERATION=$1
