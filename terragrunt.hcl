@@ -58,7 +58,14 @@ inputs = {
       zone = "a"
       profile = "worker1"
       mode = "registered"
-    }
+    },
+    { 
+      sequence = "05"
+      ip = "10.10.1.25"
+      zone = "b"
+      profile = "worker1"
+      mode = "registered"
+    }    
   ]
   ##### End define nodes #####
 
